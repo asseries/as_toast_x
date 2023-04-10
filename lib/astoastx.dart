@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:astoastx/extensions.dart';
@@ -16,7 +18,6 @@ enum ShowingPosition {
   CENTER,
   BOTTOM,
 }
-
 enum BlurMode {
   SRCOVER(BlendMode.srcOver),
   SCREEN(BlendMode.screen),
