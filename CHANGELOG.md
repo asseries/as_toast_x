@@ -9,7 +9,7 @@
 ## [1.0.3]
 
 - Problems 1.0.1 and 1.0.2 have been solved 
-- It is now ready for use
+- This version and above can be used
 
 ## [1.0.2]
 
