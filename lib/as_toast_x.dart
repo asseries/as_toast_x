@@ -4,10 +4,9 @@ import 'package:as_toast_x/extensions.dart';
 import 'package:as_toast_x/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+
 import 'animations.dart';
 import 'body_animation.dart';
-import 'package:one_context/one_context.dart';
-
 
 enum DialogType {
   SUCCESS,
@@ -20,6 +19,7 @@ enum ShowingPosition {
   CENTER,
   BOTTOM,
 }
+
 enum BlurMode {
   SRCOVER(BlendMode.srcOver),
   SCREEN(BlendMode.screen),
@@ -32,27 +32,57 @@ enum BlurMode {
   HUE(BlendMode.hue),
   MULTIPLY(BlendMode.multiply),
   OVERLAY(BlendMode.overlay);
+
   final BlendMode value;
 
   const BlurMode(this.value);
 }
 
-void asToastX( {
-      bool? isVisibleIcon,
-      DialogType? dialogType = DialogType.SUCCESS,
-      double? blurRadius,
-      Color? backgroundColor,
-      ShowingPosition? showingPosition,
-      AnimationType? animationType,
-      AnimationForce? animationForce,
-      Duration? duration,
-      Curve? curve,
-      BorderRadius? borderRadius,
-      BlurMode? blurMode,
-      required Text child,
-    }) async {
+void asToastX(BuildContext context,{
+  //Any widget
+  required Text child,
+
+  //Specify whether the icon is visible or not, default true
+  bool? isVisibleIcon,
+
+  //Dialog types:
+  // DialogType.SUCCESS,
+  // DialogType.WARNING,
+  // DialogType.ERROR, DEFAULT SUCCESS
+  DialogType? dialogType = DialogType.SUCCESS,
+
+  //BLUR RADIUS
+  double? blurRadius,
+
+  // BACKGROUND COLOR
+  Color? backgroundColor,
+
+  //Specify where the dialog opens
+  ShowingPosition? showingPosition,
+
+
+  // AnimationType.topToBottom
+  // AnimationType.bottomToTop
+  // AnimationType.rightToLeft
+  // AnimationType.leftToRight
+  AnimationType? animationType,
+
+  //Setting dialog jump ability
+  AnimationForce? animationForce,
+
+  //Animation time
+  Duration? duration,
+
+  //Animation type
+  Curve? curve,
+  //Border radius default 56
+  BorderRadius? borderRadius,
+
+  // Blur Mode
+  BlurMode? blurMode,
+}) async {
   dialogType ??= DialogType.SUCCESS;
-  OverlayState? overlayState = Overlay.of(OneContext().context!);
+  OverlayState? overlayState = Overlay.of(context);
   OverlayEntry notifyHead;
   notifyHead = OverlayEntry(builder: (context) {
     isVisibleIcon ??= true;
@@ -64,16 +94,16 @@ void asToastX( {
     duration ??= 1000.milliseconds;
     curve ??= Curves.elasticOut;
     animationForce ??=
-    (showingPosition == ShowingPosition.BOTTOM || animationType == AnimationType.bottomToTop)
-        ? AnimationForce.heavy
-        : AnimationForce.light;
+        (showingPosition == ShowingPosition.BOTTOM || animationType == AnimationType.bottomToTop)
+            ? AnimationForce.heavy
+            : AnimationForce.light;
     return Positioned(
       left: MediaQuery.of(context).size.width * 0.05,
       top: (showingPosition == ShowingPosition.TOP)
-          ? MediaQuery.of(context).size.height *(isLandscape(context)?0.08:0.05)
+          ? MediaQuery.of(context).size.height * (isLandscape(context) ? 0.08 : 0.05)
           : (showingPosition == ShowingPosition.CENTER)
-          ? MediaQuery.of(context).size.height * .9 / 2
-          : MediaQuery.of(context).size.height * (!isLandscape(context)?0.9:.8),
+              ? MediaQuery.of(context).size.height * .9 / 2
+              : MediaQuery.of(context).size.height * (!isLandscape(context) ? 0.9 : .8),
       child: AsBouncingAnimation(
         curve: curve,
         animationForce: animationForce,
@@ -90,34 +120,36 @@ void asToastX( {
                 duration: ((duration!.inMilliseconds) / 5).milliseconds,
                 isVisibleIcon: isVisibleIcon ?? true,
                 blurRadius: blurRadius ?? 3,
-                borderRadius: borderRadius, blurMode: blurMode??BlurMode.SRC,
-                child: child,),
+                borderRadius: borderRadius,
+                blurMode: blurMode ?? BlurMode.SRC,
+                child: child,
+              ),
               (isVisibleIcon ?? true)
                   ? ClipRRect(
-                borderRadius: borderRadius ?? BorderRadius.circular(56),
-                child: Container(
-                  margin: borderRadius != null ? const EdgeInsets.all(8) : EdgeInsets.zero,
-                  // color: (dialogType == DialogType.WARNING)
-                  //     ? Colors.black
-                  //     : (dialogType == DialogType.ERROR)
-                  //         ? Colors.red
-                  //         : Colors.transparent,
-                  child: Transform.scale(
-                    scale: 1.45,
-                    child: Lottie.asset(
-                      height: 50,
-                      width: 50,
-                      repeat: false,
-                      fit: BoxFit.fill,
-                      (dialogType == DialogType.WARNING)
-                          ? "assets/json/warning.json"
-                          : (dialogType == DialogType.ERROR)
-                          ? "assets/json/error.json"
-                          : "assets/json/success.json",
-                    ),
-                  ),
-                ),
-              )
+                      borderRadius: borderRadius ?? BorderRadius.circular(56),
+                      child: Container(
+                        margin: borderRadius != null ? const EdgeInsets.all(8) : EdgeInsets.zero,
+                        // color: (dialogType == DialogType.WARNING)
+                        //     ? Colors.black
+                        //     : (dialogType == DialogType.ERROR)
+                        //         ? Colors.red
+                        //         : Colors.transparent,
+                        child: Transform.scale(
+                          scale: 1.45,
+                          child: Lottie.asset(
+                            height: 50,
+                            width: 50,
+                            repeat: false,
+                            fit: BoxFit.fill,
+                            (dialogType == DialogType.WARNING)
+                                ? "assets/json/warning.json"
+                                : (dialogType == DialogType.ERROR)
+                                    ? "assets/json/error.json"
+                                    : "assets/json/success.json",
+                          ),
+                        ),
+                      ),
+                    )
                   : Container(),
             ],
           ),

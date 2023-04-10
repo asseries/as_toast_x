@@ -1,9 +1,9 @@
+// free for use
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
-import 'app_colors.dart';
-
+//Determines the horizontal or vertical position of the phone
 bool isLandscape(BuildContext context) {
   if (MediaQuery.of(context).orientation == Orientation.landscape) {
     return true;
@@ -12,14 +12,17 @@ bool isLandscape(BuildContext context) {
   }
 }
 
+//get screen height
 double getScreenHeight(context) {
   return MediaQuery.of(context).size.height;
 }
 
+//get screen width
 double getScreenWidth(context) {
   return MediaQuery.of(context).size.width;
 }
 
+//custom button
 Widget asButton(
     BuildContext context, {
       required Function onPressed,
@@ -48,13 +51,15 @@ Widget asButton(
       style: ButtonStyle(
           elevation: MaterialStateProperty.all(elevation),
           backgroundColor: MaterialStateProperty.all(
-              backgroundColor ?? AppColors.COLOR_PRIMARY),
+              backgroundColor ?? const Color.fromRGBO(212, 84, 11, 1.0)
+      ),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               borderRadius: borderRadius ?? BorderRadius.circular(8)))),
     ),
   );
 }
 
+// custom text style
 TextStyle asTextStyle(
     {String? fontFamily,
       Color? color,
@@ -64,7 +69,7 @@ TextStyle asTextStyle(
       FontWeight? fontWeight,
       List<Shadow>? shadow,
       TextOverflow? overflow}) {
-  color = color ?? AppColors.BLACK;
+  color = color ?? Colors.black;
   return TextStyle(
       fontFamily: fontFamily ?? "p_reg",
       color: color,

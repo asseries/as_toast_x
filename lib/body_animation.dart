@@ -1,4 +1,3 @@
-// ignore_for_file: constant_identifier_names, must_be_immutable
 
 import 'package:as_toast_x/extensions.dart';
 import 'package:as_toast_x/utils.dart';
@@ -7,6 +6,8 @@ import 'dart:ui';
 import 'as_toast_x.dart';
 
 
+//Animation of the second part of Toast
+// ignore: must_be_immutable
 class BodyAnimation extends StatefulWidget {
   final Widget child;
   bool? isVisibleIcon;

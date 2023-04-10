@@ -1,24 +1,5 @@
 
-
-extension StringExtension on String {
-  String capitalize() {
-    if (isEmpty) {
-      return this;
-    }
-    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
-  }
-}
-
-
-extension CustomStringToDouble on String {
-  double parseToDouble() {
-    var value = replaceAll(" ", "");
-    var item = double.parse(value.isEmpty ? "0" : value);
-
-    return item;
-  }
-}
-
+//ext for dueation
 extension NumDurationExtensions on num {
   Duration get microseconds => Duration(microseconds: round());
   Duration get ms => (this * 1000).microseconds;

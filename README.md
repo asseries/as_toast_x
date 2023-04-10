@@ -7,14 +7,28 @@ Toast Library for Flutter
 ## Toast with no context
 
 > Supported Platforms
+
 >
-> - Android
+>  - Android
+>  - iOS
+>  - Windows
+>  - Linux
+>  - MacOS
+>  - Web
+
+## GIF
+<table>
+  <tr>
+    <td><img src="https://github.com/asseries/as_toast_x/blob/main/screenshot/gif.gif" alt="VIEW" width="200"></td>
+  </tr>
+</table>
+
 
 ## How to Use
 
 ```yaml
 # add this line to your dependencies
-as_toast_x: ^1.0.0
+as_toast_x: ^1.0.5
 ```
 
 ```dart
@@ -25,12 +39,13 @@ import 'package:as_toast_x/as_toast_x.dart';
 ```dart
 // ignore_for_file: library_private_types_in_public_api
 
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:as_toast_x/animations.dart';
 import 'package:as_toast_x/as_toast_x.dart';
 import 'package:as_toast_x/extensions.dart';
 import 'package:as_toast_x/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:one_context/one_context.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,19 +59,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      builder: OneContext().builder,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
-
       ),
       home: const MainScreen(),
     );
@@ -92,6 +96,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             blurMode: BlurMode.COLORDOGLE,
                             child: Text("Qabul qilindi!",
                                 style: asTextStyle(
@@ -104,6 +109,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             child: Text("Internet tarmog'ini tekshiring!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
@@ -116,6 +122,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             child: Text(
                               "Login yoki parol xato!",
                               style: asTextStyle(
@@ -127,6 +134,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             animationType: AnimationType.leftToRight,
                             child: Text("Qabul qilindi!",
                                 style: asTextStyle(
@@ -139,6 +147,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             animationType: AnimationType.rightToLeft,
                             child: Text("Qabul qilindi!",
                                 style: asTextStyle(
@@ -151,6 +160,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             animationType: AnimationType.bottomToTop,
                             child: Text("Qabul qilindi!",
                                 style: asTextStyle(
@@ -163,6 +173,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             curve: Curves.easeInOutCirc,
                             showingPosition: ShowingPosition.TOP,
                             child: Text("Internet tarmog'ini tekshiring!",
@@ -177,6 +188,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             curve: Curves.easeInOutCirc,
                             showingPosition: ShowingPosition.CENTER,
                             child: Text("Internet tarmog'ini tekshiring!",
@@ -191,6 +203,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             curve: Curves.easeInOutCirc,
                             showingPosition: ShowingPosition.BOTTOM,
                             child: Text("Internet tarmog'ini tekshiring!",
@@ -208,6 +221,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             child: Text(
                                 "Qabul qilindi Qabul qilindi Qabul qilindi Qabul qilindi Qabul qilindi !",
                                 style: asTextStyle(
@@ -219,7 +233,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                          asToastX(
+                          asToastX(context,
                               duration: 2000.milliseconds,
                               child: Text("Internet tarmog'ini tekshiring!",
                                   style: asTextStyle(
@@ -233,6 +247,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             backgroundColor: Colors.blueAccent,
                             child: Text(
                               "Login yoki parol xato!",
@@ -246,6 +261,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             curve: Curves.easeOutBack,
                             child: Text("Qabul qilindi!",
                                 style: asTextStyle(
@@ -258,6 +274,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             curve: Curves.bounceInOut,
                             showingPosition: ShowingPosition.TOP,
                             animationType: AnimationType.rightToLeft,
@@ -272,6 +289,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             curve: Curves.elasticIn,
                             animationType: AnimationType.bottomToTop,
                             child: Text("Qabul qilindi!",
@@ -285,6 +303,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
+                            context,
                             curve: Curves.easeInSine,
                             showingPosition: ShowingPosition.BOTTOM,
                             duration: 300.milliseconds,
@@ -311,8 +330,4 @@ class _MainScreenState extends State<MainScreen> {
 
 
 ```
-
-### Note Android
-
-<img src="https://github.com/asseries/as_toast_x/blob/main/screenshot/gif.gif" height="200px" />
 
