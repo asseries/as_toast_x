@@ -327,5 +327,5 @@ class _MainScreenState extends State<MainScreen> {
 
 ### Note Android
 
-<img src="https://raw.githubusercontent.com/as_toast_x/master/screenshot/gif.gif" height="200px" />
+<img src="https://github.com/asseries/as_toast_x/blob/main/screenshot/gif.gif" height="200px" />
 
