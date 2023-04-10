@@ -1,4 +1,4 @@
-package uz.asser.as_bouncing_dialog
+package uz.asser.astoastx
 
 import io.flutter.embedding.android.FlutterActivity
 

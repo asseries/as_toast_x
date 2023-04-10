@@ -1,8 +1,8 @@
 
-import 'package:as_bouncing_dialog/animations.dart';
-import 'package:as_bouncing_dialog/as_bouncing_dialog.dart';
-import 'package:as_bouncing_dialog/extensions.dart';
-import 'package:as_bouncing_dialog/utils.dart';
+import 'package:astoastx/animations.dart';
+import 'package:astoastx/astoastx.dart';
+import 'package:astoastx/extensions.dart';
+import 'package:astoastx/utils.dart';
 import 'package:flutter/material.dart';
 
 
@@ -32,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         blurMode: BlurMode.COLORDOGLE,
                         Text("Qabul qilindi!",
@@ -45,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         Text("Internet tarmog'ini tekshiring!",
                             style: asTextStyle(
@@ -58,7 +58,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         Text(
                           "Login yoki parol xato!",
@@ -70,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
                     }, child: const Text("ERROR")),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         animationType: AnimationType.leftToRight,
                         Text("Qabul qilindi!",
@@ -83,7 +83,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         animationType: AnimationType.rightToLeft,
                         Text("Qabul qilindi!",
@@ -96,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         animationType: AnimationType.bottomToTop,
                         Text("Qabul qilindi!",
@@ -109,7 +109,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         curve: Curves.easeInOutCirc,
                         showingPosition: ShowingPosition.TOP,
@@ -124,7 +124,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         curve: Curves.easeInOutCirc,
                         showingPosition: ShowingPosition.CENTER,
@@ -139,7 +139,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         curve: Curves.easeInOutCirc,
                         showingPosition: ShowingPosition.BOTTOM,
@@ -157,7 +157,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         Text(
                             "Qabul qilindi Qabul qilindi Qabul qilindi Qabul qilindi Qabul qilindi !",
@@ -170,7 +170,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         duration: 2000.milliseconds,
                         Text("Internet tarmog'ini tekshiring!",
@@ -185,7 +185,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         backgroundColor: Colors.blueAccent,
                         Text(
@@ -199,7 +199,7 @@ class _MainScreenState extends State<MainScreen> {
                     }, child: const Text("BLUE BACKGROUND")),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         curve: Curves.easeOutBack,
                         Text("Qabul qilindi!",
@@ -212,7 +212,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         curve: Curves.bounceInOut,
                         showingPosition: ShowingPosition.TOP,
@@ -227,7 +227,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         curve: Curves.elasticIn,
                         animationType: AnimationType.bottomToTop,
@@ -241,7 +241,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      showAsBouncingDialog(
+                      asToastX(
                         context,
                         curve: Curves.easeInSine,
                         showingPosition: ShowingPosition.BOTTOM,

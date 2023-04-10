@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "uz.asser" "\0"
-            VALUE "FileDescription", "as_bouncing_dialog" "\0"
+            VALUE "FileDescription", "astoastx" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "as_bouncing_dialog" "\0"
+            VALUE "InternalName", "astoastx" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 uz.asser. All rights reserved." "\0"
-            VALUE "OriginalFilename", "as_bouncing_dialog.exe" "\0"
-            VALUE "ProductName", "as_bouncing_dialog" "\0"
+            VALUE "OriginalFilename", "astoastx.exe" "\0"
+            VALUE "ProductName", "astoastx" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

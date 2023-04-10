@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="uz.asser.as_bouncing_dialog">
+    package="uz.asser.astoastx">
    <application
-        android:label="as_bouncing_dialog"
+        android:label="astoastx"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

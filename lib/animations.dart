@@ -1,4 +1,4 @@
-import 'package:as_bouncing_dialog/extensions.dart';
+import 'package:astoastx/extensions.dart';
 import 'package:flutter/material.dart';
 
 enum AnimationType { leftToRight, rightToLeft, topToBottom, bottomToTop }

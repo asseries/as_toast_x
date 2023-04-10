@@ -1,6 +1,6 @@
 {
-    "name": "as_bouncing_dialog",
-    "short_name": "as_bouncing_dialog",
+    "name": "astoastx",
+    "short_name": "astoastx",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

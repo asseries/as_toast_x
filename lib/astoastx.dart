@@ -1,10 +1,8 @@
-import 'dart:ui';
-
-import 'package:as_bouncing_dialog/extensions.dart';
-import 'package:as_bouncing_dialog/utils.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui';
+import 'package:astoastx/extensions.dart';
+import 'package:astoastx/utils.dart';
 import 'package:lottie/lottie.dart';
-
 import 'animations.dart';
 
 enum DialogType {
@@ -36,7 +34,7 @@ enum BlurMode {
   const BlurMode(this.value);
 }
 
-void showAsBouncingDialog(
+void asToastX(
   BuildContext context,
   Widget child, {
   bool? isVisibleIcon,
