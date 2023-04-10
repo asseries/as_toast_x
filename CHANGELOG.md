@@ -1,3 +1,2 @@
-[1.0.0]
-Initial Open Sources
+[1.0.2]
 show Toast in Android

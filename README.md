@@ -4,7 +4,7 @@
 
 Toast Library for Flutter
 
-## Toast with context
+## Toast with no context
 
 > Supported Platforms
 >
@@ -23,14 +23,14 @@ import 'package:as_toast_x/as_toast_x.dart';
 
 
 ```dart
-import 'package:flutter/material.dart';
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:as_toast_x/animations.dart';
 import 'package:as_toast_x/as_toast_x.dart';
 import 'package:as_toast_x/extensions.dart';
 import 'package:as_toast_x/utils.dart';
-
-
-
+import 'package:flutter/material.dart';
+import 'package:one_context/one_context.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,6 +44,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      builder: OneContext().builder,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -55,14 +56,16 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+
       ),
-      home: MainScreen(),
+      home: const MainScreen(),
     );
   }
 }
 
-
 class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -89,9 +92,8 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             blurMode: BlurMode.COLORDOGLE,
-                            Text("Qabul qilindi!",
+                            child: Text("Qabul qilindi!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                           );
@@ -102,8 +104,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
-                            Text("Internet tarmog'ini tekshiring!",
+                            child: Text("Internet tarmog'ini tekshiring!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                             dialogType: DialogType.WARNING,
@@ -115,8 +116,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
-                            Text(
+                            child: Text(
                               "Login yoki parol xato!",
                               style: asTextStyle(
                                   size: 16, color: Colors.white, fontWeight: FontWeight.w800),
@@ -127,9 +127,8 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             animationType: AnimationType.leftToRight,
-                            Text("Qabul qilindi!",
+                            child: Text("Qabul qilindi!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                           );
@@ -140,9 +139,8 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             animationType: AnimationType.rightToLeft,
-                            Text("Qabul qilindi!",
+                            child: Text("Qabul qilindi!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                           );
@@ -153,9 +151,8 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             animationType: AnimationType.bottomToTop,
-                            Text("Qabul qilindi!",
+                            child: Text("Qabul qilindi!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                           );
@@ -166,10 +163,9 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             curve: Curves.easeInOutCirc,
                             showingPosition: ShowingPosition.TOP,
-                            Text("Internet tarmog'ini tekshiring!",
+                            child: Text("Internet tarmog'ini tekshiring!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                             dialogType: DialogType.WARNING,
@@ -181,10 +177,9 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             curve: Curves.easeInOutCirc,
                             showingPosition: ShowingPosition.CENTER,
-                            Text("Internet tarmog'ini tekshiring!",
+                            child: Text("Internet tarmog'ini tekshiring!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                             dialogType: DialogType.WARNING,
@@ -196,10 +191,9 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             curve: Curves.easeInOutCirc,
                             showingPosition: ShowingPosition.BOTTOM,
-                            Text("Internet tarmog'ini tekshiring!",
+                            child: Text("Internet tarmog'ini tekshiring!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                             dialogType: DialogType.WARNING,
@@ -214,8 +208,7 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
-                            Text(
+                            child: Text(
                                 "Qabul qilindi Qabul qilindi Qabul qilindi Qabul qilindi Qabul qilindi !",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
@@ -227,14 +220,12 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                              context,
                               duration: 2000.milliseconds,
-                              Text("Internet tarmog'ini tekshiring!",
+                              child: Text("Internet tarmog'ini tekshiring!",
                                   style: asTextStyle(
                                       size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                               dialogType: DialogType.WARNING,
-                              blurMode: BlurMode.DIFFERENCE
-                          );
+                              blurMode: BlurMode.DIFFERENCE);
                         }, child: const Text("2 SECOND")),
                     const SizedBox(
                       height: 8,
@@ -242,9 +233,8 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             backgroundColor: Colors.blueAccent,
-                            Text(
+                            child: Text(
                               "Login yoki parol xato!",
                               style: asTextStyle(
                                   size: 16, color: Colors.white, fontWeight: FontWeight.w800),
@@ -256,9 +246,8 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             curve: Curves.easeOutBack,
-                            Text("Qabul qilindi!",
+                            child: Text("Qabul qilindi!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                           );
@@ -269,11 +258,10 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             curve: Curves.bounceInOut,
                             showingPosition: ShowingPosition.TOP,
                             animationType: AnimationType.rightToLeft,
-                            Text("Qabul qilindi!",
+                            child: Text("Qabul qilindi!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                           );
@@ -284,10 +272,9 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             curve: Curves.elasticIn,
                             animationType: AnimationType.bottomToTop,
-                            Text("Qabul qilindi!",
+                            child: Text("Qabul qilindi!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                           );
@@ -298,12 +285,11 @@ class _MainScreenState extends State<MainScreen> {
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                           asToastX(
-                            context,
                             curve: Curves.easeInSine,
                             showingPosition: ShowingPosition.BOTTOM,
                             duration: 300.milliseconds,
                             animationForce: AnimationForce.hight,
-                            Text("Internet tarmog'ini tekshiring!",
+                            child: Text("Internet tarmog'ini tekshiring!",
                                 style: asTextStyle(
                                     size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                             dialogType: DialogType.WARNING,
@@ -322,6 +308,7 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
+
 
 ```
 
