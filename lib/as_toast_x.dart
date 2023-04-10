@@ -1,9 +1,9 @@
 // ignore_for_file: constant_identifier_names, must_be_immutable
 
+import 'package:as_toast_x/extensions.dart';
+import 'package:as_toast_x/utils.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import 'package:astoastx/extensions.dart';
-import 'package:astoastx/utils.dart';
 import 'package:lottie/lottie.dart';
 import 'animations.dart';
 
@@ -72,7 +72,7 @@ void asToastX(
           : (showingPosition == ShowingPosition.CENTER)
               ? MediaQuery.of(context).size.height * .9 / 2
               : MediaQuery.of(context).size.height * (!isLandscape(context)?0.9:.8),
-      child: asBouncingAnimation(
+      child: AsBouncingAnimation(
         curve: curve,
         animationForce: animationForce,
         animationType: animationType,
@@ -86,10 +86,10 @@ void asToastX(
             children: [
               BodyAnimation(
                   duration: ((duration!.inMilliseconds) / 5).milliseconds,
-                  child: child,
                   isVisibleIcon: isVisibleIcon ?? true,
                   blurRadius: blurRadius ?? 3,
-                  borderRadius: borderRadius, blurMode: blurMode??BlurMode.SRC,),
+                  borderRadius: borderRadius, blurMode: blurMode??BlurMode.SRC,
+                  child: child,),
               (isVisibleIcon ?? true)
                   ? ClipRRect(
                       borderRadius: borderRadius ?? BorderRadius.circular(56),

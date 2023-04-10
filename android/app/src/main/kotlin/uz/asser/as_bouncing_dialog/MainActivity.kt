@@ -1,4 +1,4 @@
-package uz.asser.astoastx
+package uz.asser.as_toast_x
 
 import io.flutter.embedding.android.FlutterActivity
 

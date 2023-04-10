@@ -1,9 +1,9 @@
-# astoastx
+# as_toast_x
 
 ![](gif.gif)
 
 
-astoastx
+as_toast_x
 Toast Library for Flutter
 
 Build Checks
@@ -16,11 +16,11 @@ Android
 
 How to Use
 # add this line to your dependencies
-astoastx: ^1.0.0
+as_toast_x: ^1.0.0
 
-import 'package:astoastx/astoastx.dart';
+import 'package:as_toast_x/as_toast_x.dart';
 Toast with Build Context (Android)
-asToastX(
+as_toast_x(
 context,
 blurMode: BlurMode.COLORDOGLE,
 Text("Qabul qilindi!",

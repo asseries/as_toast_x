@@ -1,18 +1,20 @@
-import 'package:astoastx/extensions.dart';
+// ignore_for_file: must_be_immutable, library_private_types_in_public_api, deprecated_member_use
+
+import 'package:as_toast_x/extensions.dart';
 import 'package:flutter/material.dart';
 
 enum AnimationType { leftToRight, rightToLeft, topToBottom, bottomToTop }
 
 enum AnimationForce {heavy, hight, medium, light }
 
-class asBouncingAnimation extends StatefulWidget {
+class AsBouncingAnimation extends StatefulWidget {
   Widget child;
   Curve? curve;
   Duration? duration;
   AnimationType? animationType;
   AnimationForce? animationForce;
 
-  asBouncingAnimation(
+  AsBouncingAnimation(
       {Key? key,
       required this.child,
       this.duration,
@@ -22,10 +24,10 @@ class asBouncingAnimation extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<asBouncingAnimation> createState() => _asBouncingAnimationState();
+  State<AsBouncingAnimation> createState() => _AsBouncingAnimationState();
 }
 
-class _asBouncingAnimationState extends State<asBouncingAnimation> {
+class _AsBouncingAnimationState extends State<AsBouncingAnimation> {
   @override
   void initState() {
     widget.animationType ??= AnimationType.leftToRight;
@@ -79,8 +81,8 @@ class _asBouncingAnimationState extends State<asBouncingAnimation> {
 ///Animates the child
 ///
 ///using TweenAnimationBuilder
-class asScaleAnimation extends StatelessWidget {
-  const asScaleAnimation({
+class AsScaleAnimation extends StatelessWidget {
+  const AsScaleAnimation({
     Key? key,
     required this.child,
     this.begin = 0.4,
@@ -116,16 +118,16 @@ class asScaleAnimation extends StatelessWidget {
   }
 }
 
-class asAnimationWidth extends StatefulWidget {
-  const asAnimationWidth({Key? key}) : super(key: key);
+class AsAnimationWidth extends StatefulWidget {
+  const AsAnimationWidth({Key? key}) : super(key: key);
 
   @override
-  State<asAnimationWidth> createState() => _asAnimationWidthState();
+  State<AsAnimationWidth> createState() => _AsAnimationWidthState();
 }
 
-class _asAnimationWidthState extends State<asAnimationWidth> with SingleTickerProviderStateMixin {
+class _AsAnimationWidthState extends State<AsAnimationWidth> with SingleTickerProviderStateMixin {
   double _width = 0.0;
-  var _color = Colors.blue;
+  final _color = Colors.blue;
 
   @override
   void initState() {
@@ -183,10 +185,12 @@ class ExpandedSection extends StatefulWidget {
 
   final Widget child;
   final bool expand;
-  ExpandedSection({this.expand = false, required this.child});
+  const ExpandedSection({super.key, this.expand = false, required this.child});
 
   @override
-  _ExpandedSectionState createState() => _ExpandedSectionState();
+  _ExpandedSectionState createState() {
+    return _ExpandedSectionState();
+  }
 }
 
 class _ExpandedSectionState extends State<ExpandedSection> with SingleTickerProviderStateMixin {
