@@ -17,18 +17,7 @@ Toast Library for Flutter
 
 ## GIF
 
-[//]: # (![]&#40;gif.gif&#41;)
 ![DEMO](doc/gif.gif)
-
-[//]: # (<table>)
-
-[//]: # (  <tr>)
-
-[//]: # (    <td><img src="https://github.com/asseries/as_toast_x/blob/main/doc/gif.gif" alt="VIEW" width="200"></td>)
-
-[//]: # (  </tr>)
-
-[//]: # (</table>)
 
 
 ## How to Use
