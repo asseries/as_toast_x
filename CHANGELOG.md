@@ -1,4 +1,8 @@
-## [1.0.7]
+## [1.0.8]
+
+- only upload gif
+- 
+- ## [1.0.7]
 
 - only upload gif
 - 

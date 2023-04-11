@@ -1,9 +1,14 @@
 name: as_toast_x
+
 description: 'A beautiful designed toast with animations, contains multiple built in designs and let you design your toast'
 homepage: https://github.com/asseries/as_toast_x
 issue_tracker: https://github.com/asseries/as_toast_x/issues
 
-version: 1.0.7
+screenshots:
+  - description: 'Demo'
+    path: doc/toast.gif
+
+version: 1.0.8
 environment:
   sdk: '>=2.19.6 <3.0.0'
 
