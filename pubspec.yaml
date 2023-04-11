@@ -6,7 +6,7 @@ issue_tracker: https://github.com/asseries/as_toast_x/issues
 
 screenshots:
   - description: 'Demo'
-    path: doc/toast.gif
+    path: screenshots/toast.gif
 
 version: 1.0.8
 environment:

@@ -17,7 +17,7 @@ Toast Library for Flutter
 
 ## GIF
 
-![DEMO](doc/toast.gif)
+![DEMO](screenshots/toast.gif)
 
 
 
