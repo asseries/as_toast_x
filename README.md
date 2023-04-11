@@ -1,6 +1,5 @@
 # [as_toast_x](https://pub.dev/packages/as_toast_x)
 
-![](gif.gif)
 
 Toast Library for Flutter
 
@@ -17,11 +16,19 @@ Toast Library for Flutter
 >  - Web
 
 ## GIF
-<table>
-  <tr>
-    <td><img src="https://github.com/asseries/as_toast_x/blob/main/screenshot/gif.gif" alt="VIEW" width="200"></td>
-  </tr>
-</table>
+
+[//]: # (![]&#40;gif.gif&#41;)
+![DEMO](doc/gif.gif)
+
+[//]: # (<table>)
+
+[//]: # (  <tr>)
+
+[//]: # (    <td><img src="https://github.com/asseries/as_toast_x/blob/main/doc/gif.gif" alt="VIEW" width="200"></td>)
+
+[//]: # (  </tr>)
+
+[//]: # (</table>)
 
 
 ## How to Use
