@@ -17,14 +17,16 @@ Toast Library for Flutter
 
 ## GIF
 
-![DEMO](doc/gif.gif)
+![DEMO](doc/toast.gif)
+
+
 
 
 ## How to Use
 
 ```yaml
 # add this line to your dependencies
-as_toast_x: ^1.0.6
+as_toast_x: ^1.0.7
 ```
 
 ```dart
