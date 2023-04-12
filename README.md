@@ -17,7 +17,7 @@ Toast Library for Flutter
 
 ## GIF
 <p  align="center">
-<img  src="https://github.com/asseries/as_toast_x/blob/main/gif.gif?raw=true"  width="350"/>
+<img  src="https://github.com/asseries/as_toast_x/blob/main/toast.gif?raw=true"  width="350"/>
 <br>
 </p>
 
