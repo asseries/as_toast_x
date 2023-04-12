@@ -16,8 +16,10 @@ Toast Library for Flutter
 >  - Web
 
 ## GIF
-
-![DEMO](screenshots/toast.gif)
+<p  align="center">
+<img  src="https://github.com/asseries/as_toast_x/blob/main/gif.gif?raw=true"  width="350"/>
+<br>
+</p>
 
 
 
@@ -26,7 +28,7 @@ Toast Library for Flutter
 
 ```yaml
 # add this line to your dependencies
-as_toast_x: ^1.0.8
+as_toast_x: ^1.0.9
 ```
 
 ```dart

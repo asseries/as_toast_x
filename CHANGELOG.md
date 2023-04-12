@@ -1,3 +1,7 @@
+- ## [1.0.9]
+
+- issue in lottie
+
 - ## [1.0.8]
 
 - issue in lottie

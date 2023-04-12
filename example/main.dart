@@ -54,13 +54,20 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      asToastX(
-                        context,
-                        blurMode: BlurMode.COLORDOGLE,
-                        child: Text("Qabul qilindi!",
-                            style: asTextStyle(
-                                size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
-                      );
+                      // asToastX(
+                      //   context,
+                      //   blurMode: BlurMode.COLORDOGLE,
+                      //   child: Text("Qabul qilindi!",
+                      //       style: asTextStyle(
+                      //           size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
+                      // );
+
+                          asToastX(context,
+                            child: Text("event",style: asTextStyle(color: Colors.white),),
+                            dialogType: DialogType.ERROR,
+                            // animationType: AnimationType.topToBottom,
+
+                          );
                     }, child: const Text("SUCCESS")),
                     const SizedBox(
                       height: 8,
