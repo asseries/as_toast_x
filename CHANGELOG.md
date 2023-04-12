@@ -1,10 +1,6 @@
-## [1.0.9]
+- ## [1.0.8]
 
 - issue in lottie
-
-## [1.0.8]
-
-- only upload gif
 
 - ## [1.0.7]
 

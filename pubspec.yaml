@@ -4,11 +4,11 @@ description: 'A beautiful designed toast with animations, contains multiple buil
 homepage: https://github.com/asseries/as_toast_x
 issue_tracker: https://github.com/asseries/as_toast_x/issues
 
-screenshots:
-  - description: 'Demo'
-    path: screenshots/toast.gif
+#screenshots:
+#  - description: 'Demo'
+#    path: screenshots/toast.gif
 
-version: 1.0.9
+version: 1.0.8
 environment:
   sdk: '>=2.18.6 <3.0.0'
 
