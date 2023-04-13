@@ -1,6 +1,6 @@
 - ## [1.1.0]
 
-- issue in lottie
+- lottie deleted, bug fixed
 
 - ## [1.0.9]
 
