@@ -1,3 +1,7 @@
+- ## [1.1.1]
+
+- ready
+
 - ## [1.1.0]
 
 - lottie deleted, bug fixed

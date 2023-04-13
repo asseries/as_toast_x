@@ -152,7 +152,7 @@ void asToastX(BuildContext context, {
                 child: AsScaleAnimation(
                   duration: 1000.milliseconds,
                   child:  ReversibleAnimation(child: Container(
-                    margin: borderRadius != null ? const EdgeInsets.all(8) : EdgeInsets.all(12),
+                    margin: borderRadius != null ? const EdgeInsets.all(8) : const EdgeInsets.all(12),
                     child: Icon(
                         iconType==IconType.material?materialIcons[toastType]:cupertinoIcons[toastType],
                         size: 32,
