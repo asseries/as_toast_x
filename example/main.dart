@@ -54,20 +54,17 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
-                      // asToastX(
-                      //   context,
-                      //   blurMode: BlurMode.COLORDOGLE,
-                      //   child: Text("Qabul qilindi!",
-                      //       style: asTextStyle(
-                      //           size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
-                      // );
-
-                          asToastX(context,
-                            child: Text("event",style: asTextStyle(color: Colors.white),),
-                            dialogType: DialogType.ERROR,
-                            // animationType: AnimationType.topToBottom,
-
-                          );
+                      asToastX(
+                        context,
+                        child: Text(
+                          "Ma'lumotlar yuborildi",
+                          style: asTextStyle(color: Colors.white, fontWeight: FontWeight.w800,size: 16),
+                        ),
+                        toastType: ToastType.success,
+                        toastDirection: ToastDirection.ltr,
+                        iconType: IconType.material,
+                        // animationType: AnimationType.topToBottom,
+                      );
                     }, child: const Text("SUCCESS")),
                     const SizedBox(
                       height: 8,
@@ -79,7 +76,7 @@ class _MainScreenState extends State<MainScreen> {
                         child: Text("Internet tarmog'ini tekshiring!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
-                        dialogType: DialogType.WARNING,
+                        toastType: ToastType.warning,
                       );
                     }, child: const Text("WARNING")),
                     const SizedBox(
@@ -94,19 +91,20 @@ class _MainScreenState extends State<MainScreen> {
                           style: asTextStyle(
                               size: 16, color: Colors.white, fontWeight: FontWeight.w800),
                         ),
-                        dialogType: DialogType.ERROR,
+                        toastType: ToastType.error,
                       );
                     }, child: const Text("ERROR")),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
                       asToastX(
                         context,
-                        animationType: AnimationType.leftToRight,
-                        child: Text("Qabul qilindi!",
+                        toastDirection: ToastDirection.ltr,
+                        toastType: ToastType.info,
+                        child: Text("Malumotlar INFO!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                       );
-                    }, child: const Text("LEFT TO RIGHT ")),
+                    }, child: const Text("INFO")),
                     const SizedBox(
                       height: 8,
                     ),
@@ -114,7 +112,7 @@ class _MainScreenState extends State<MainScreen> {
                         onPressed: () {
                       asToastX(
                         context,
-                        animationType: AnimationType.rightToLeft,
+                        toastDirection: ToastDirection.rtl,
                         child: Text("Qabul qilindi!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
@@ -125,14 +123,16 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     asButton(context, margin: const EdgeInsets.symmetric(horizontal: 20),
                         onPressed: () {
+
                       asToastX(
                         context,
-                        animationType: AnimationType.bottomToTop,
-                        child: Text("Qabul qilindi!",
+                        toastType: ToastType.delete,
+                        toastDirection: ToastDirection.btt,
+                        child: Text("All queryies deleted",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
                       );
-                    }, child: const Text("BOTTOM TO TOP")),
+                    }, child: const Text("DELETE")),
                     const SizedBox(
                       height: 8,
                     ),
@@ -145,7 +145,7 @@ class _MainScreenState extends State<MainScreen> {
                         child: Text("Internet tarmog'ini tekshiring!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
-                        dialogType: DialogType.WARNING,
+                        toastType: ToastType.warning,
                       );
                     }, child: Text("OutCirc TOP".toUpperCase())),
                     const SizedBox(
@@ -160,7 +160,7 @@ class _MainScreenState extends State<MainScreen> {
                         child: Text("Internet tarmog'ini tekshiring!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
-                        dialogType: DialogType.WARNING,
+                        toastType: ToastType.warning,
                       );
                     }, child: Text("OutCirc CENTER".toUpperCase())),
                     const SizedBox(
@@ -175,7 +175,7 @@ class _MainScreenState extends State<MainScreen> {
                         child: Text("Internet tarmog'ini tekshiring!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
-                        dialogType: DialogType.WARNING,
+                        toastType: ToastType.warning,
                       );
                     }, child: Text("OutCirc BOTTOM".toUpperCase())),
                     const SizedBox(
@@ -204,7 +204,7 @@ class _MainScreenState extends State<MainScreen> {
                           child: Text("Internet tarmog'ini tekshiring!",
                               style: asTextStyle(
                                   size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
-                          dialogType: DialogType.WARNING,
+                          toastType: ToastType.warning,
                           blurMode: BlurMode.DIFFERENCE);
                     }, child: const Text("2 SECOND")),
                     const SizedBox(
@@ -220,7 +220,7 @@ class _MainScreenState extends State<MainScreen> {
                           style: asTextStyle(
                               size: 16, color: Colors.white, fontWeight: FontWeight.w800),
                         ),
-                        dialogType: DialogType.ERROR,
+                        toastType: ToastType.error,
                         curve: Curves.fastOutSlowIn,
                       );
                     }, child: const Text("BLUE BACKGROUND")),
@@ -243,7 +243,7 @@ class _MainScreenState extends State<MainScreen> {
                         context,
                         curve: Curves.bounceInOut,
                         showingPosition: ShowingPosition.TOP,
-                        animationType: AnimationType.rightToLeft,
+                        toastDirection: ToastDirection.rtl,
                         child: Text("Qabul qilindi!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
@@ -257,7 +257,7 @@ class _MainScreenState extends State<MainScreen> {
                       asToastX(
                         context,
                         curve: Curves.elasticIn,
-                        animationType: AnimationType.bottomToTop,
+                        toastDirection: ToastDirection.btt,
                         child: Text("Qabul qilindi!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
@@ -277,7 +277,7 @@ class _MainScreenState extends State<MainScreen> {
                         child: Text("Internet tarmog'ini tekshiring!",
                             style: asTextStyle(
                                 size: 16, color: Colors.white, fontWeight: FontWeight.w800)),
-                        dialogType: DialogType.WARNING,
+                        toastType: ToastType.warning,
                       );
                     }, child: Text("ease In Sine".toUpperCase())),
                     const SizedBox(

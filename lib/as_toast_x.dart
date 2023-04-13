@@ -2,17 +2,31 @@
 
 import 'package:as_toast_x/extensions.dart';
 import 'package:as_toast_x/utils.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 import 'animations.dart';
 import 'body_animation.dart';
 
-enum DialogType {
-  SUCCESS,
-  WARNING,
-  ERROR,
-}
+const materialIcons = {
+  ToastType.success: Icons.check_circle_outline,
+  ToastType.error: Icons.error,
+  ToastType.warning: Icons.warning,
+  ToastType.info: Icons.info,
+  ToastType.delete: Icons.delete
+};
+
+enum ToastType { success, error, warning, info, delete, custom }
+enum IconType {material,cupertino}
+
+/// Cupertino Icons for the different types of motion toast.
+const cupertinoIcons = {
+  ToastType.success: CupertinoIcons.checkmark_alt_circle,
+  ToastType.error: CupertinoIcons.exclamationmark_circle_fill,
+  ToastType.warning: CupertinoIcons.exclamationmark_triangle_fill,
+  ToastType.info: CupertinoIcons.info_circle_fill,
+  ToastType.delete: CupertinoIcons.clear_circled,
+};
 
 enum ShowingPosition {
   TOP,
@@ -38,34 +52,34 @@ enum BlurMode {
   const BlurMode(this.value);
 }
 
-void asToastX(BuildContext context,{
+void asToastX(BuildContext context, {
   //Any widget
   required Text child,
 
   //Specify whether the icon is visible or not, default true
-  bool? isVisibleIcon,
+  bool? isVisibleIcon = true,
 
   //Dialog types:
   // DialogType.SUCCESS,
   // DialogType.WARNING,
   // DialogType.ERROR, DEFAULT SUCCESS
-  DialogType? dialogType = DialogType.SUCCESS,
+  ToastType? toastType = ToastType.success,
 
   //BLUR RADIUS
-  double? blurRadius,
+  double? blurRadius =3.0,
 
   // BACKGROUND COLOR
   Color? backgroundColor,
 
   //Specify where the dialog opens
-  ShowingPosition? showingPosition,
+  ShowingPosition? showingPosition = ShowingPosition.TOP,
 
 
   // AnimationType.topToBottom
   // AnimationType.bottomToTop
   // AnimationType.rightToLeft
   // AnimationType.leftToRight
-  AnimationType? animationType,
+  ToastDirection? toastDirection = ToastDirection.ttb,
 
   //Setting dialog jump ability
   AnimationForce? animationForce,
@@ -74,40 +88,48 @@ void asToastX(BuildContext context,{
   Duration? duration,
 
   //Animation type
-  Curve? curve,
+  Curve? curve = Curves.elasticOut,
   //Border radius default 56
   BorderRadius? borderRadius,
+
+  //Icon Type
+  IconType? iconType = IconType.cupertino,
 
   // Blur Mode
   BlurMode? blurMode,
 }) async {
-  dialogType ??= DialogType.SUCCESS;
   OverlayState? overlayState = Overlay.of(context);
   OverlayEntry notifyHead;
   notifyHead = OverlayEntry(builder: (context) {
-    isVisibleIcon ??= true;
-    dialogType ??= DialogType.SUCCESS;
-    blurRadius ??= 3;
     backgroundColor ??= Colors.black.withOpacity(.2);
-    showingPosition ??= ShowingPosition.TOP;
-    animationType ??= AnimationType.topToBottom;
     duration ??= 1000.milliseconds;
-    curve ??= Curves.elasticOut;
     animationForce ??=
-        (showingPosition == ShowingPosition.BOTTOM || animationType == AnimationType.bottomToTop)
-            ? AnimationForce.heavy
-            : AnimationForce.light;
+    (showingPosition == ShowingPosition.BOTTOM || toastDirection == ToastDirection.btt)
+        ? AnimationForce.heavy
+        : AnimationForce.light;
     return Positioned(
-      left: MediaQuery.of(context).size.width * 0.05,
+      left: MediaQuery
+          .of(context)
+          .size
+          .width * 0.05,
       top: (showingPosition == ShowingPosition.TOP)
-          ? MediaQuery.of(context).size.height * (isLandscape(context) ? 0.08 : 0.05)
+          ? MediaQuery
+          .of(context)
+          .size
+          .height * (isLandscape(context) ? 0.08 : 0.05)
           : (showingPosition == ShowingPosition.CENTER)
-              ? MediaQuery.of(context).size.height * .9 / 2
-              : MediaQuery.of(context).size.height * (!isLandscape(context) ? 0.9 : .8),
+          ? MediaQuery
+          .of(context)
+          .size
+          .height * .9 / 2
+          : MediaQuery
+          .of(context)
+          .size
+          .height * (!isLandscape(context) ? 0.9 : .8),
       child: AsBouncingAnimation(
         curve: curve,
         animationForce: animationForce,
-        animationType: animationType,
+        toastDirection: toastDirection,
         duration: duration,
         child: Card(
           margin: const EdgeInsets.all(8),
@@ -126,30 +148,28 @@ void asToastX(BuildContext context,{
               ),
               (isVisibleIcon ?? true)
                   ? ClipRRect(
-                      borderRadius: borderRadius ?? BorderRadius.circular(56),
-                      child: Container(
-                        margin: borderRadius != null ? const EdgeInsets.all(8) : EdgeInsets.zero,
-                        // color: (dialogType == DialogType.WARNING)
-                        //     ? Colors.black
-                        //     : (dialogType == DialogType.ERROR)
-                        //         ? Colors.red
-                        //         : Colors.transparent,
-                        child: Transform.scale(
-                          scale: 1.45,
-                          child: Lottie.asset(
-                            height: 50,
-                            width: 50,
-                            repeat: false,
-                            fit: BoxFit.fill,
-                            (dialogType == DialogType.WARNING)
-                                ? "assets/json/warning.json"
-                                : (dialogType == DialogType.ERROR)
-                                    ? "assets/json/error.json"
-                                    : "assets/json/success.json",
-                          ),
-                        ),
-                      ),
-                    )
+                borderRadius: borderRadius ?? BorderRadius.circular(56),
+                child: AsScaleAnimation(
+                  duration: 1000.milliseconds,
+                  child:  ReversibleAnimation(child: Container(
+                    margin: borderRadius != null ? const EdgeInsets.all(8) : EdgeInsets.all(12),
+                    child: Icon(
+                        iconType==IconType.material?materialIcons[toastType]:cupertinoIcons[toastType],
+                        size: 32,
+                        color: (toastType == ToastType.success)
+                            ? Colors.greenAccent
+                            : (toastType == ToastType.error)
+                            ? Colors.red
+                            : (toastType == ToastType.warning)
+                            ? Colors.orange
+                            : (toastType == ToastType.info)
+                            ? Colors.blueAccent
+                            : (toastType == ToastType.delete)
+                            ? Colors.redAccent:Colors.transparent
+                    ),
+                  ),)
+                )
+              )
                   : Container(),
             ],
           ),
