@@ -1,3 +1,7 @@
+- ## [1.1.2]
+
+- add extra functions: showError,showSuccess,showWarning,...
+
 - ## [1.1.1]
 
 - ready

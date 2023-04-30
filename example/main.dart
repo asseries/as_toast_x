@@ -3,6 +3,7 @@
 import 'package:as_toast_x/animations.dart';
 import 'package:as_toast_x/as_toast_x.dart';
 import 'package:as_toast_x/extensions.dart';
+import 'package:as_toast_x/functions.dart';
 import 'package:as_toast_x/utils.dart';
 import 'package:flutter/material.dart';
 

@@ -182,3 +182,4 @@ void asToastX(BuildContext context, {
   await Future.delayed((isVisibleIcon ?? true) ? 3.seconds : 2.6.seconds);
   notifyHead.remove();
 }
+
